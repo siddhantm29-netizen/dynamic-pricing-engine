@@ -189,6 +189,85 @@ Each product has 30 days of simulated price history and 5 competitor price recor
 
 ---
 
+## 🗺️ Roadmap
+
+> Track progress via [GitHub Issues](https://github.com/siddhantm29-netizen/dynamic-pricing-engine/issues) and [Project Board](https://github.com/siddhantm29-netizen/dynamic-pricing-engine/projects).
+
+```mermaid
+timeline
+    title Dynamic Pricing Engine — Development Timeline
+    section Phase 1 · MVP
+        Product Catalog  : ✅ CRUD with categories
+        Competitor Sim   : ✅ 5 simulated competitor sources
+        Pricing Engine   : ✅ Rules-based optimal price
+        ML Demand Model  : ✅ GradientBoosting regressor
+        React Dashboard  : ✅ Charts + product detail pages
+        Docker Support   : ✅ docker-compose setup
+    section Phase 2 · Cloud
+        Free Deployment  : ✅ Render + Vercel configs
+        Pickle Cache     : ✅ Instant ML cold starts
+        Railway Support  : ✅ railway.json added
+        Health Endpoint  : ✅ UptimeRobot compatible
+    section Phase 3 · Enhancement
+        Real Scraper     : 🔲 Live competitor price scraping
+        Price Alerts     : 🔲 Email/Slack when price changes
+        A/B Testing      : 🔲 Test two price points simultaneously
+        Auth System      : 🔲 JWT login for multi-user access
+    section Phase 4 · Scale
+        Platform APIs    : 🔲 Amazon / eBay / Shopify sync
+        Deep RL Pricing  : 🔲 Reinforcement learning pricing agent
+        Revenue Forecast : 🔲 30/60/90-day revenue projections
+        Multi-tenant     : 🔲 SaaS support for multiple stores
+```
+
+### ✅ Phase 1 — MVP *(Completed)*
+
+- [x] Product catalog management (CRUD)
+- [x] Simulated competitor price scraper (5 sources)
+- [x] Core pricing rules engine with margin guardrails
+- [x] GradientBoosting ML demand estimation model
+- [x] 30-day price history tracking per product
+- [x] React + Vite dashboard with interactive Recharts
+- [x] Product detail page with price trend chart
+- [x] Competitor price comparison table
+- [x] SQLite database with 15 seeded products
+- [x] Docker + docker-compose one-command startup
+- [x] GitHub Actions CI/CD pipeline
+
+### ✅ Phase 2 — Cloud Deployment *(Completed)*
+
+- [x] Render.com backend deployment (`render.yaml`)
+- [x] Vercel frontend deployment (`vercel.json`)
+- [x] Railway.app support (`railway.json`)
+- [x] ML model pickle cache — cold start < 1s
+- [x] `/health` endpoint for UptimeRobot keep-alive
+- [x] Environment variable config (CORS, DATABASE_URL)
+- [x] PostgreSQL support via `DATABASE_URL`
+
+### 🔲 Phase 3 — Feature Enhancement *(Planned)*
+
+- [ ] **Live competitor scraping** — Playwright/Scrapy scraper for real retailer sites (Amazon, Flipkart)
+- [ ] **Price change alerts** — Email (SendGrid) and Slack webhook notifications when optimal price shifts >5%
+- [ ] **A/B price testing** — Split traffic between two price points and measure conversion
+- [ ] **JWT authentication** — Secure login for store managers with role-based permissions
+- [ ] **Bulk product import** — CSV upload for onboarding large catalogues
+- [ ] **Price approval workflow** — Require manager approval before high-impact price changes apply
+- [ ] **Dark mode** — Dashboard theme toggle
+- [ ] **Unit test coverage** — Expand from 3 → 80%+ coverage
+
+### 🔲 Phase 4 — Production Scale *(Future)*
+
+- [ ] **Amazon Selling Partner API** — Pull real competitor prices and sync your listings automatically
+- [ ] **Shopify / WooCommerce integration** — Apply recommended prices directly to your storefront via API
+- [ ] **Reinforcement Learning pricing agent** — Replace rule-based engine with a Deep Q-Network that learns from actual sales outcomes
+- [ ] **Real demand data** — Train on actual transaction history instead of synthetic data
+- [ ] **Revenue forecasting** — 30/60/90-day forward revenue projections using Prophet
+- [ ] **Elasticity modelling** — Calculate true price elasticity per SKU from historical data
+- [ ] **Multi-currency support** — Geo-based pricing for international markets
+- [ ] **Multi-tenant SaaS** — Onboard multiple independent stores under one deployment
+
+---
+
 ## 🤝 Contributing
 
 Pull requests are welcome! Open an issue first for major changes.
