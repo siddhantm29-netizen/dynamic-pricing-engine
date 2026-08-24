@@ -50,3 +50,9 @@ def on_startup():
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Dynamic Pricing Engine API", "docs": "/docs"}
+
+
+@app.get("/health")
+def health_check():
+    """Ping with UptimeRobot (free) every 5 min to prevent Render sleep."""
+    return {"status": "ok"}

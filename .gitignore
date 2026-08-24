@@ -8,3 +8,6 @@ env/
 venv/
 *.db
 .DS_Store
+
+# ML model pickles (generated at build/startup — do not commit)
+*.pkl
