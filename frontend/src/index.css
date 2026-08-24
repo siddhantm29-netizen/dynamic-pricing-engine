@@ -1,0 +1,283 @@
+:root {
+  --primary: #1b5e20;
+  --primary-light: #4c8c4a;
+  --primary-dark: #003300;
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --success: #2e7d32;
+  --danger: #d32f2f;
+  --border: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page h1 {
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  margin-bottom: 0;
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #ccc;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Utilities */
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.loading { text-align: center; padding: 3rem; font-size: 1.2rem; color: var(--text-muted); }
+
+/* Dashboard */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.stat-card.alert {
+  border-left: 4px solid var(--danger);
+}
+
+.chart-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Product Catalog */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card h3 a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.product-card .category {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.price-info {
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.price-info div {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.diff {
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+/* Product Detail */
+.back-btn { margin-bottom: 1rem; }
+.header-section { margin-bottom: 2rem; }
+.badges { display: flex; gap: 1rem; margin-top: 0.5rem; }
+.badge { background: #e0e0e0; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+.badge.stock { background: #e3f2fd; color: #1565c0; }
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .content-grid { grid-template-columns: 1fr; }
+}
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+.table th { color: var(--text-muted); font-weight: 600; }
+
+.price-comparison { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding: 1rem; background: var(--bg-color); border-radius: 8px; }
+.price-box { display: flex; flex-direction: column; align-items: center; }
+.price-box .label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+.price-box .value { font-size: 1.5rem; font-weight: 700; }
+.price-box.highlighted .value { color: var(--primary); }
+.arrow { font-size: 1.5rem; color: var(--text-muted); }
+
+.metrics { display: flex; justify-content: space-between; margin-bottom: 1.5rem; }
+.metric { display: flex; flex-direction: column; }
+.metric .label { font-size: 0.85rem; color: var(--text-muted); }
+
+.explanation-box { background: #e8f5e9; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border-left: 4px solid var(--success); }
+.explanation-box h3 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
+.explanation-box p { font-size: 0.9rem; line-height: 1.5; }
+
+.constraint-list { list-style: none; }
+.constraint-list li { margin-bottom: 0.5rem; display: flex; justify-content: space-between; }
+
+/* Competitors */
+.comp-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+.comp-tag { padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; }
+.comp-tag.danger { background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+.comp-tag.safe { background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; }
