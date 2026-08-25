@@ -1,20 +1,16 @@
 """
 Tests for Dynamic Pricing Engine API.
-Uses in-memory SQLite DB from conftest.py.
+TESTING=1 and DATABASE_URL are set in conftest.py before any import.
 """
-import os
-os.environ["TESTING"] = "1"
 
 
 def test_health_check(client):
-    """GET / returns 200."""
     response = client.get("/")
     assert response.status_code == 200
     assert "message" in response.json()
 
 
 def test_health_endpoint(client):
-    """GET /health returns status ok."""
     response = client.get("/health")
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
@@ -28,7 +24,7 @@ def test_get_products_empty(client):
 
 
 def test_dashboard_stats_empty(client):
-    """GET /pricing/dashboard/stats on empty DB returns zeros."""
+    """Dashboard stats on empty DB returns zeros."""
     response = client.get("/pricing/dashboard/stats")
     assert response.status_code == 200
     data = response.json()
@@ -37,6 +33,6 @@ def test_dashboard_stats_empty(client):
 
 
 def test_product_not_found(client):
-    """GET /pricing/99999/recommend returns 404."""
+    """Non-existent product returns 404."""
     response = client.get("/pricing/99999/recommend")
     assert response.status_code == 404
